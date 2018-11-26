@@ -1,7 +1,10 @@
+$preview-size: 100px;
+$border-color: #ccc;
+
 .color-picker {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid $border-color;
 }
 
 .color-picker__controls,
@@ -26,6 +29,6 @@
 
 .color-picker__preview-pane {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: $preview-size;
+  height: $preview-size;
 }

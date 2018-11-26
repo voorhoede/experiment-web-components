@@ -17,9 +17,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              cacheDirectory: true,
-            },
           },
           {
             loader: 'eslint-loader',
@@ -30,10 +27,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
           { loader: 'react-web-component-style-loader' },
           { loader: 'css-loader' },
+          { loader: 'sass-loader' },
         ],
       },
     ],

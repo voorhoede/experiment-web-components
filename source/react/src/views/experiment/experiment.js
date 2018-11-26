@@ -1,8 +1,5 @@
 import React from 'react';
-import ReactWebComponent from 'react-web-component';
 import ColorPicker from '../../components/color-picker/color-picker';
-
-ReactWebComponent.create(<ColorPicker />, 'color-picker');
 
 class Experiment extends React.Component {
   render() {
@@ -10,10 +7,13 @@ class Experiment extends React.Component {
       <main className="experiment">
         <h1>Web Component</h1>
         <color-picker></color-picker>
+
         <h1>React Component: default</h1>
         <ColorPicker />
+
         <h1>React Component: set custom hue value</h1>
         <ColorPicker hue={100} />
+
         <h1>React Component: use different input element</h1>
         <ColorPicker>
           <input
