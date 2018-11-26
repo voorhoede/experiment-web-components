@@ -8,7 +8,7 @@ class ColorPicker extends React.Component {
     super(props);
 
     this.state = {
-      hue: 0,
+      hue: this.props.hue || 0,
     };
   }
 
@@ -20,19 +20,20 @@ class ColorPicker extends React.Component {
 
   render() {
     const { hue } = this.state;
+    const children = React.Children.map(this.props.children, child => React.cloneElement(child, {
+      value: hue || 0,
+      onChange: this.handleChange,
+    }));
 
     return (
       <div className="color-picker">
         <div className="color-picker__controls">
           <p className="color-picker__description">Adjust the hue:</p>
-          <input
-            className="color-picker__slider"
-            type="range"
-            min="0"
-            max="360"
-            step="1"
-            value={hue}
-            onChange={this.handleChange} />
+
+          { children
+            ? React.Children.map(children, child => React.isValidElement(child) && child)
+            : <DefaultSlider hue={hue} onChange={this.handleChange} />
+          }
         </div>
         <div className="color-picker__preview">
           <span
@@ -44,8 +45,25 @@ class ColorPicker extends React.Component {
   }
 }
 
+const DefaultSlider = ({ hue, onChange }) => (
+  <input
+    type="range"
+    className="color-picker__slider"
+    min="0"
+    max="360"
+    step="1"
+    value={hue}
+    onChange={onChange} />
+);
+
+DefaultSlider.propTypes = {
+  hue: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
+};
+
 ColorPicker.propTypes = {
   hue: PropTypes.number,
+  children: PropTypes.node,
 };
 
 export default ColorPicker;
