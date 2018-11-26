@@ -2,9 +2,9 @@ import React from 'react';
 import ReactWebComponent from 'react-web-component';
 import PropTypes from 'prop-types';
 
-import './color-picker.scss';
+import './color-picker.css';
 
-class ColorPicker extends React.Component {
+export default class ColorPicker extends React.Component {
   constructor(props) {
     super(props);
 
@@ -67,5 +67,3 @@ ColorPicker.propTypes = {
 };
 
 ReactWebComponent.create(<ColorPicker />, 'color-picker');
-
-export default ColorPicker;

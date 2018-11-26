@@ -10,6 +10,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          { loader: 'react-web-component-style-loader' },
+          { loader: 'css-loader' },
+        ],
+      },
+      {
         test: /\.js$/,
         exclude: [
           /node_modules/,
@@ -24,14 +31,6 @@ module.exports = {
               fix: true,
             },
           },
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          { loader: 'react-web-component-style-loader' },
-          { loader: 'css-loader' },
-          { loader: 'sass-loader' },
         ],
       },
     ],
