@@ -1,0 +1,31 @@
+.color-picker {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.color-picker__controls,
+.color-picker__preview {
+  padding: 1rem;
+}
+
+.color-picker__controls {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.color-picker__description {
+  flex: 0 1 auto;
+  margin: 0 1rem 0 0;
+}
+
+.color-picker__slider {
+  flex: 1 0 auto;
+  margin: 0;
+}
+
+.color-picker__preview-pane {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
