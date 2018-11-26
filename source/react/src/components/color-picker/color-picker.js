@@ -15,7 +15,7 @@ class ColorPicker extends React.Component {
   handleChange = (e) => {
     const { value } = e.target;
 
-    this.setState({ hue: value });
+    this.setState({ hue: parseInt(value, 10) });
   }
 
   render() {
@@ -29,7 +29,6 @@ class ColorPicker extends React.Component {
       <div className="color-picker">
         <div className="color-picker__controls">
           <p className="color-picker__description">Adjust the hue:</p>
-
           { children
             ? React.Children.map(children, child => React.isValidElement(child) && child)
             : <DefaultSlider hue={hue} onChange={this.handleChange} />
