@@ -1,11 +1,8 @@
 module.exports = {
   mode: 'development',
-  entry: {
-    client: './src/index.js',
-  },
+  entry: './src/index.js',
   output: {
-    filename: 'js/[name].[hash].js',
-    chunkFilename: 'js/[name].[hash].js',
+    filename: '../../../build/react/color-picker-react.js',
   },
   module: {
     rules: [
