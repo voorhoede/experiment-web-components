@@ -9,11 +9,6 @@ const App = () => (
     <ColorPicker>
       <input type="number" min="0" max="360" step="1" />
     </ColorPicker>
-
-    <h2>Web components</h2>
-    <color-picker></color-picker>
-    <color-picker-with-prop></color-picker-with-prop>
-    <color-picker-with-child></color-picker-with-child>
   </div>
 );
 

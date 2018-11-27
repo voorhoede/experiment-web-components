@@ -65,15 +65,13 @@ ColorPicker.propTypes = {
   children: PropTypes.node,
 };
 
-ReactWebComponent.create(
-  <ColorPicker />, 'color-picker', false,
-);
+ReactWebComponent.create(<ColorPicker />, 'color-picker-react');
+
+ReactWebComponent.create(<ColorPicker hue={180} />, 'color-picker-react-with-prop');
 
 ReactWebComponent.create(
-  <ColorPicker hue={180} />, 'color-picker-with-prop', false,
-);
-
-ReactWebComponent.create(
-  <ColorPicker><input type="number" min="0" max="360" step="1" /></ColorPicker>,
-  'color-picker-with-child', false,
+  <ColorPicker>
+    <input type="number" min="0" max="360" step="1" />
+  </ColorPicker>,
+  'color-picker-react-with-child',
 );
