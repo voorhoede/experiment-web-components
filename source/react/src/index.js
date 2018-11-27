@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Experiment from './views/experiment/experiment';
+import App from './app';
 
-ReactDOM.render(<Experiment />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

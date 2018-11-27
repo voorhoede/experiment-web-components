@@ -1,7 +1,7 @@
 .color-picker {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
 }
 
 .color-picker__controls,

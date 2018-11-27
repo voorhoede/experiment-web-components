@@ -10,6 +10,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          { loader: 'react-web-component-style-loader' },
+          { loader: 'css-loader' },
+        ],
+      },
+      {
         test: /\.js$/,
         exclude: [
           /node_modules/,
@@ -17,9 +24,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              cacheDirectory: true,
-            },
           },
           {
             loader: 'eslint-loader',
@@ -27,13 +31,6 @@ module.exports = {
               fix: true,
             },
           },
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'react-web-component-style-loader' },
-          { loader: 'css-loader' },
         ],
       },
     ],
