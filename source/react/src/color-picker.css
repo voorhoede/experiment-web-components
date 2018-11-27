@@ -1,6 +1,7 @@
 .color-picker {
   display: flex;
   align-items: center;
+  max-width: 500px;
   border: 1px solid #cccccc;
 }
 
@@ -19,13 +20,13 @@
   margin: 0 1rem 0 0;
 }
 
-.color-picker__slider {
+.color-picker__controls input {
   flex: 1 0 auto;
   margin: 0;
 }
 
 .color-picker__preview-pane {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
 }
