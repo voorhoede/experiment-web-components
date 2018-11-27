@@ -20,7 +20,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "dev": "react-scripts start",
-    "start": ""
+    "start": "npm run build && npm run dev"
   },
   "dependencies": {
     "prop-types": "15.6.2",

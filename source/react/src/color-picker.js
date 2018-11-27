@@ -48,7 +48,6 @@ export default class ColorPicker extends React.Component {
 const DefaultSlider = ({ hue, onChange }) => (
   <input
     type="range"
-    className="color-picker__slider"
     min="0"
     max="360"
     step="1"
@@ -66,4 +65,15 @@ ColorPicker.propTypes = {
   children: PropTypes.node,
 };
 
-ReactWebComponent.create(<ColorPicker />, 'color-picker');
+ReactWebComponent.create(
+  <ColorPicker />, 'color-picker', false,
+);
+
+ReactWebComponent.create(
+  <ColorPicker hue={180} />, 'color-picker-with-prop', false,
+);
+
+ReactWebComponent.create(
+  <ColorPicker><input type="number" min="0" max="360" step="1" /></ColorPicker>,
+  'color-picker-with-child', false,
+);
