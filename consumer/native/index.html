@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Web Components - Native</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../../source/native/color-picker-native.js"></script>
+    <script src="../../build/native/color-picker-native.js"></script>
     <style>
       body {
         display: flex;
@@ -28,8 +28,8 @@
 
     <script>
       const colorPicker = document.querySelector('color-picker-native')
-      colorPicker.addEventListener('input', event => console.log('from host input:', event.target.value), false)
-      colorPicker.addEventListener('change', event => console.log('from host change:', event.target.value), false)
+      colorPicker.addEventListener('input', function(event) {console.log('from host input:', event.target.value)}, false)
+      colorPicker.addEventListener('change', function(event) {console.log('from host change:', event.target.value)}, false)
     </script>
   </body>
 </html>

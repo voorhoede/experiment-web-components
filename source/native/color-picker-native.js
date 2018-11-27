@@ -64,6 +64,9 @@ class ColorPickerNative extends HTMLElement {
     super()
     const shadowRoot = this.attachShadow({mode: 'open'})
     shadowRoot.innerHTML = template;
+
+    this.setValue = this.setValue.bind(this)
+    this.handleInput = this.handleInput.bind(this)
   }
 
   static get observedAttributes() {
@@ -91,7 +94,7 @@ class ColorPickerNative extends HTMLElement {
     }
   }
 
-  setValue = val => {
+  setValue(val) {
     if (this.inputElement) {
       this.inputElement.value = Number(val)
       const [r, g, b] = hslToRgb(Number(val) / 360 , 1, 0.5)
@@ -101,7 +104,7 @@ class ColorPickerNative extends HTMLElement {
     }
   }
 
-  handleInput = (event) => {
+  handleInput(event) {
     event.stopPropagation()
     this.hue =this.inputElement.value
     this.dispatchEvent(new CustomEvent(event.type))
@@ -113,11 +116,12 @@ class ColorPickerNative extends HTMLElement {
     this.inputElement = this.shadowRoot.querySelector('[data-hue-input] input')
 
     slot.addEventListener('slotchange', event => {
-      if (slot.assignedElements().length) {
+      const input = slot.assignedNodes().find(item => item.nodeName === 'INPUT')
+      if (input) {
         const oldValue = this.inputElement.value
         this.inputElement.removeEventListener('input', this.handleInput)
         this.inputElement.removeEventListener('change', this.handleInput)
-        this.inputElement = slot.assignedElements()[0]
+        this.inputElement = input
         this.inputElement.addEventListener('input', this.handleInput)
         this.inputElement.addEventListener('change', this.handleInput)
         this.inputElement.value = oldValue
