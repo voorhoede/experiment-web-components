@@ -1,5 +1,6 @@
 #!/bin/bash
 
 ./build-native.sh
-./build-vue.sh
+./build-react.sh
 ./build-stencil.sh
+./build-vue.sh
