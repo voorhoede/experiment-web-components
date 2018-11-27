@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+  <script src="/build/colorpickerstencil.js"></script>
+  <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      color-picker-stencil {
+        margin-bottom: 1rem
+      }
+    </style>
+</head>
+<body>
+  <color-picker-stencil></color-picker-stencil>
+
+  <color-picker-stencil hue="100"></color-picker-stencil>
+
+  <color-picker-stencil>
+    <input type="number" max="360">
+  </color-picker-stencil>
+
+  <script>
+      const colorPicker = document.querySelector('color-picker-stencil')
+      colorPicker.addEventListener('input', function(event) {console.log('from host input:', event.detail)}, false)
+      colorPicker.addEventListener('change', function(event) {console.log('from host change:', event.detail)}, false)
+    </script>
+
+</body>
+</html>
