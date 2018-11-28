@@ -1,22 +1,7 @@
 {
-  "name": "react-web-components",
-  "version": "1.0.0",
-  "description": "React Web Components",
-  "author": "De Voorhoede (https://www.voorhoede.nl)",
-  "homepage": "https://vvandijck@github.com/voorhoede/experiment-web-components#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/voorhoede/experiment-web-components.git"
-  },
+  "name": "react",
+  "version": "0.1.0",
   "private": true,
-  "bugs": {
-    "url": "https://github.com/voorhoede/experiment-web-components/issues"
-  },
-  "main": "index.js",
-  "keywords": [
-    "experiment"
-  ],
-  "license": "ISC",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "dev": "react-scripts start",
@@ -32,11 +17,8 @@
   "devDependencies": {
     "babel-loader": "8.0.4",
     "css-loader": "1.0.1",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-loader": "2.1.1",
-    "node-sass": "4.9.4",
     "react-scripts": "2.1.1",
-    "sass-loader": "7.1.0",
+    "webpack": "4.26.1",
     "webpack-cli": "3.1.2"
   },
   "browserslist": [
