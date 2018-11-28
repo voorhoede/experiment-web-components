@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd source/vue
+cd ../source/react
 npm run build
 cd ../../

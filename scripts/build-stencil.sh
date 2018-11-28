@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd source/react
+cd ../source/stencil
 npm run build
 cd ../../

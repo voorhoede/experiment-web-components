@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd source/stencil
+cd ../ource/skate
 npm run build
 cd ../../
