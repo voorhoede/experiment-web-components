@@ -1,0 +1,37 @@
+<div class="app">
+  <ColorPickerSvelte on:input="onInput(event)"/>
+
+  <ColorPickerSvelte hue="100"/>
+
+  <ColorPickerSvelte>
+    <input type="number" />
+  </ColorPickerSvelte>
+</div>
+
+<script>
+import ColorPickerSvelte from './components/color-picker-svelte.html'
+
+export default {
+  tag: 'my-app',
+  components: {
+    ColorPickerSvelte
+  },
+  methods: {
+    onInput(event) {
+      console.log(event)
+    }
+  }
+}
+</script>
+
+<style>
+  .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+	.app :global(.color-picker-svelte) {
+    margin-bottom: 1rem;
+  }
+</style>

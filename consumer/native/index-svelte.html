@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Web Components - Native</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../build/svelte/color-picker-svelte.js"></script>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      color-picker-svelte {
+        margin-bottom: 1rem
+      }
+    </style>
+  </head>
+  <body>
+    <color-picker-svelte></color-picker-svelte>
+
+    <color-picker-svelte hue="100"></color-picker-svelte>
+
+    <color-picker-svelte>
+      <input type="number" max="360">
+    </color-picker-svelte>
+
+    <script>
+      const colorPicker = document.querySelector('color-picker-svelte')
+      colorPicker.addEventListener('input', function(event) {console.log('from host input:', event.target.value)}, false)
+      colorPicker.addEventListener('change', function(event) {console.log('from host change:', event.target.value)}, false)
+    </script>
+  </body>
+</html>
