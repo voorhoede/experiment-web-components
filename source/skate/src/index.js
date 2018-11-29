@@ -5,16 +5,18 @@ import withPreact from '@skatejs/renderer-preact';
 import { h } from 'preact';
 
 class WithPreact extends withComponent(withPreact()) {
-  static state = {
-    hue: props.string({ attribute: true, default: '200' })
+  static get props() {
+    return {
+      hue: props.string
+    }
   }
 
   handleChange = (e) => {
     const { value } = e.target;
-    this.state = { hue: value };
+    this.hue = value;
   }
 
-  render({ state, handleChange }) {
+  render({ hue, handleChange }) {
     return (
       <div className="color-picker">
         <div className="color-picker__controls">
@@ -24,14 +26,14 @@ class WithPreact extends withComponent(withPreact()) {
             min="0"
             max="360"
             step="1"
-            value={state.hue}
-            onChange={handleChange} />
+            value={hue}
+            onInput={handleChange} />
         </div>
         <div className="color-picker__preview">
           <span
             className="color-picker__preview-pane"
-            style={{ backgroundColor: `hsl(${state.hue}, 100%, 50%)` }}>
-              hsl({state.hue}, 100%, 50%)
+            style={{ backgroundColor: `hsl(${hue}, 100%, 50%)` }}>
+              hsl({hue}, 100%, 50%)
             </span>
         </div>
       </div>
