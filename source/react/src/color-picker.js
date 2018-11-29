@@ -9,20 +9,20 @@ export default class ColorPicker extends React.Component {
     super(props);
 
     this.state = {
-      hue: this.props.hue || 0,
+      hue: this.props.hue || '0',
     };
   }
 
   handleChange = (e) => {
     const { value } = e.target;
 
-    this.setState({ hue: parseInt(value, 10) });
+    this.setState({ hue: value });
   }
 
   render() {
     const { hue } = this.state;
     const children = React.Children.map(this.props.children, child => React.cloneElement(child, {
-      value: hue || 0,
+      value: this.props.hue || '0',
       onChange: this.handleChange,
     }));
 
@@ -56,22 +56,13 @@ const DefaultSlider = ({ hue, onChange }) => (
 );
 
 DefaultSlider.propTypes = {
-  hue: PropTypes.number,
+  hue: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 
 ColorPicker.propTypes = {
-  hue: PropTypes.number,
+  hue: PropTypes.string,
   children: PropTypes.node,
 };
 
 ReactWebComponent.create(<ColorPicker />, 'color-picker-react');
-
-ReactWebComponent.create(<ColorPicker hue={180} />, 'color-picker-react-with-prop');
-
-ReactWebComponent.create(
-  <ColorPicker>
-    <input type="number" min="0" max="360" step="1" />
-  </ColorPicker>,
-  'color-picker-react-with-child',
-);

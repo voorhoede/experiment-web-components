@@ -1,5 +1,4 @@
-module.exports = {
-  mode: 'development',
+exports.app = {
   entry: './src/index.js',
   output: {
     filename: '../../../build/react/color-picker-react.js',
