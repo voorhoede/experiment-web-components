@@ -61,6 +61,12 @@ export default {
     }
   },
 
+  onupdate({changed, current}) {
+    if (changed.hue === true) {
+      this.set({inputValue: current.hue})
+    }
+  },
+
   oncreate() {
     const inputElement = this.refs.input.querySelector('input')
     const data = this.options.data || {}
@@ -79,7 +85,7 @@ export default {
     onChange() {
       this.fire('change', {value: this.value})
     },
-  }
+  },
 }
 </script>
 
