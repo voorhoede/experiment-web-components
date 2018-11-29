@@ -7,7 +7,7 @@
     "build:prod": "webpack --config webpack.prod.config.js",
     "dev": "react-scripts start",
     "start": "npm run build:dev && npm run dev",
-    "build": "npm run build:prod && npm run dev"
+    "build": "npm run build:prod"
   },
   "dependencies": {
     "prop-types": "15.6.2",
