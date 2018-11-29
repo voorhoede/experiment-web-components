@@ -11,8 +11,10 @@
 
     <h2>Web components</h2>
     <color-picker-react></color-picker-react>
-    <color-picker-react-with-prop></color-picker-react-with-prop>
-    <color-picker-react-with-child></color-picker-react-with-child>
+    <color-picker-react hue="300"></color-picker-react>
+    <color-picker-react>
+      <input type="number" min="0" max="360" step="1" />
+    </color-picker-react>
 
     <script src="../../build/react/color-picker-react.js"></script>
   </body>
