@@ -11,12 +11,12 @@ class ColorPicker extends LitElement {
     super();
 
     this.hue = '0';
-    this.clickHandler = this.clickHandler.bind(this);
+
+    this.hueChangeHandler = this.hueChangeHandler.bind(this);
   }
 
-  clickHandler(e) {
+  hueChangeHandler(e) {
     const { value } = e.target;
-
     this.hue = value;
   }
 
@@ -60,13 +60,15 @@ class ColorPicker extends LitElement {
       <div class="color-picker">
         <div class="color-picker__controls">
           <p class="color-picker__description">Adjust the hue:</p>
-          <input
-            type="range"
-            min="0"
-            max="360"
-            step="1"
-            value=${this.hue}
-            @change=${e => this.clickHandler(e)} />
+          <slot name="input">
+            <input
+              type="range"
+              min="0"
+              max="360"
+              step="1"
+              value=${this.hue}
+              @change=${this.hueChangeHandler} />
+          </slot>
         </div>
         <div class="color-picker__preview">
           <span

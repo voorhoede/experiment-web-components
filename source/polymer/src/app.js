@@ -6,6 +6,9 @@ class App extends LitElement {
     return html`
       <color-picker-polymer></color-picker-polymer>
       <color-picker-polymer hue="300"></color-picker-polymer>
+      <color-picker-polymer hue="300">
+        <input slot="input" type="number" min="1" max="360" @change=${(e) => console.log('changed!')}>
+      </color-picker-polymer>
     `;
   }
 }
