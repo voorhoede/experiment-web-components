@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd ../ource/skate
+cd ../source/skate
 npm run build
 cd ../../
