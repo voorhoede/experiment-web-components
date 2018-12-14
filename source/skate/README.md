@@ -1,6 +1,6 @@
 # Skate
 
-Skate version of the color-picker component.
+Skate version of the hue slider component.
 
 ## Development
 
