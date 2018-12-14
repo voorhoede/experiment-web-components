@@ -8,22 +8,25 @@ fi
 
 cd ./scripts/
 
-echo "[1 of 6] - Building Native"
+echo "[1 of 7] - Building Native"
 ./build-native.sh
 
-echo "[2 of 6] - Building React"
+echo "[2 of 7] - Building Polymer"
+./build-polymer.sh
+
+echo "[3 of 7] - Building React"
 ./build-react.sh
 
-echo "[3 of 6] - Building Skate"
+echo "[4 of 7] - Building Skate"
 ./build-skate.sh
 
-echo "[4 of 6] - Building Stencil"
+echo "[5 of 7] - Building Stencil"
 ./build-stencil.sh
 
-echo "[5 of 6] - Building Svelte"
+echo "[6 of 7] - Building Svelte"
 ./build-svelte.sh
 
-echo "[6 of 6] - Building Vue"
+echo "[7 of 7] - Building Vue"
 ./build-vue.sh
 
 echo "Done 👍🏻"
