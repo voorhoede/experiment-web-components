@@ -13,23 +13,25 @@
       }
 
       color-picker-svelte {
-        margin-bottom: 1rem
+        margin-bottom: 1rem;
       }
     </style>
   </head>
   <body>
     <color-picker-svelte></color-picker-svelte>
-
     <color-picker-svelte hue="100"></color-picker-svelte>
-
     <color-picker-svelte>
       <input type="number" max="360">
     </color-picker-svelte>
 
     <script>
-      const colorPicker = document.querySelector('color-picker-svelte')
-      colorPicker.addEventListener('input', function(event) {console.log('from host input:', event.target.value)}, false)
-      colorPicker.addEventListener('change', function(event) {console.log('from host change:', event.target.value)}, false)
+      const hueSlider = document.querySelector('color-picker-svelte');
+      hueSlider.addEventListener('input', function(e) {
+        console.log('from host input:', e.target.value);
+      });
+      hueSlider.addEventListener('change', function(e) {
+        console.log('from host change:', e.target.value);
+      });
     </script>
   </body>
 </html>

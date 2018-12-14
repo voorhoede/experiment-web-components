@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="../../build/stencil/colorpickerstencil.js"></script>
-  <style>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Components - Native</title>
+    <script src="../../build/stencil/colorpickerstencil.js"></script>
+    <style>
       body {
         display: flex;
         flex-direction: column;
       }
 
       color-picker-stencil {
-        margin-bottom: 1rem
+        margin-bottom: 1rem;
       }
     </style>
-</head>
-<body>
-  <color-picker-stencil></color-picker-stencil>
+  </head>
+  <body>
+    <color-picker-stencil></color-picker-stencil>
+    <color-picker-stencil hue="100"></color-picker-stencil>
+    <color-picker-stencil>
+      <input type="number" max="360">
+    </color-picker-stencil>
 
-  <color-picker-stencil hue="100"></color-picker-stencil>
-
-  <color-picker-stencil>
-    <input type="number" max="360">
-  </color-picker-stencil>
-
-  <script>
-      const colorPicker = document.querySelector('color-picker-stencil')
-      colorPicker.addEventListener('input', function(event) {console.log('from host input:', event.detail)}, false)
-      colorPicker.addEventListener('change', function(event) {console.log('from host change:', event.detail)}, false)
+    <script>
+      const hueSlider = document.querySelector('color-picker-stencil');
+      hueSlider.addEventListener('input', function(e) {
+        console.log('from host input:', e.detail);
+      });
+      hueSlider.addEventListener('change', function(e) {
+        console.log('from host change:', e.detail);
+      });
     </script>
-
-</body>
+  </body>
 </html>
