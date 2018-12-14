@@ -1,23 +1,3 @@
-const template = `
-  <style>
-    :host {
-      display: inline-flex;
-    }
-
-    .color-picker-native__output {
-      --hue-value: 0;
-      display: block;
-      width: 2em;
-      height: 2em;
-      background-color: hsl(var(--hue-value), 100%, 50%);
-      color: transparent;
-      margin-left: 0.5em;
-    }
-  </style>
-  <slot data-hue-input><input type="range" min="0" max="360"></slot>
-  <span class="color-picker-native__output" data-hue-output>0</span>
-`
-
 /**
  * Converts an HSL color value to RGB. Conversion formula
  * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
@@ -63,7 +43,24 @@ class ColorPickerNative extends HTMLElement {
   constructor() {
     super()
     const shadowRoot = this.attachShadow({mode: 'open'})
-    shadowRoot.innerHTML = template;
+    shadowRoot.innerHTML = `
+    <slot data-hue-input><input type="range" min="0" max="360"></slot>
+    <span class="color-picker-native__output" data-hue-output>0</span>
+    <style>
+      :host {
+        display: inline-flex;
+      }
+      .color-picker-native__output {
+        --hue-value: 0;
+        display: block;
+        width: 2em;
+        height: 2em;
+        background-color: hsl(var(--hue-value), 100%, 50%);
+        color: transparent;
+        margin-left: 0.5em;
+      }
+    </style>
+  `;
 
     this.setValue = this.setValue.bind(this)
     this.handleInput = this.handleInput.bind(this)
