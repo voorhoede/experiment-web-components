@@ -6,31 +6,33 @@
     <title>Web Components - Native</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://unpkg.com/vue"></script>
-    <script src="../../build/vue/color-picker-vue.min.js"></script>
+    <script src="../../build/vue/hue-slider-vue.min.js"></script>
     <style>
       body {
         display: flex;
         flex-direction: column;
       }
 
-      color-picker-vue {
-        margin-bottom: 1rem
+      hue-slider-vue {
+        margin-bottom: 1rem;
       }
     </style>
   </head>
   <body>
-    <color-picker-vue></color-picker-vue>
-
-    <color-picker-vue hue="100"></color-picker-vue>
-
-    <color-picker-vue>
-      <input type="number" max="360">
-    </color-picker-vue>
+    <hue-slider-vue></hue-slider-vue>
+    <hue-slider-vue hue="100"></hue-slider-vue>
+    <hue-slider-vue>
+      Lorem ipsum
+    </hue-slider-vue>
 
     <script>
-      const colorPicker = document.querySelector('color-picker-vue')
-      colorPicker.addEventListener('input', function(event) {console.log('from host input:', event)}, false)
-      colorPicker.addEventListener('change', function(event) {console.log('from host change:', event)}, false)
+      const hueSlider = document.querySelector('color-picker-vue');
+      hueSlider.addEventListener('input', function(e) {
+        console.log('from host input:', e.target.value);
+      });
+      hueSlider.addEventListener('change', function(e) {
+        console.log('from host change:', e.target.value);
+      });
     </script>
   </body>
 </html>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target wc --name color-picker-vue --dest ../../build/vue ./src/main.js"
+    "build": "vue-cli-service build --target wc --name hue-slider-vue --dest ../../build/vue ./src/export.js"
   },
   "dependencies": {
     "@vue/web-component-wrapper": "1.2.0",
