@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
+import './component/hue-slider';
+
+const App = () => (
+  <div></div>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));

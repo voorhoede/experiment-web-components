@@ -1,7 +1,7 @@
 exports.app = {
   entry: './src/index.js',
   output: {
-    filename: '../../../build/react/color-picker-react.js',
+    filename: '../../../build/react/hue-slider-react.js',
   },
   module: {
     rules: [
