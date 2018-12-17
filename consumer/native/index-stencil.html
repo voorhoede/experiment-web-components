@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Components - Native</title>
-    <script src="../../build/stencil/colorpickerstencil.js"></script>
+    <script src="../../build/stencil/huesliderstencil.js"></script>
     <style>
       body {
         display: flex;
         flex-direction: column;
       }
 
-      color-picker-stencil {
+      hue-slider-stencil {
         margin-bottom: 1rem;
       }
     </style>
   </head>
   <body>
-    <color-picker-stencil></color-picker-stencil>
-    <color-picker-stencil hue="100"></color-picker-stencil>
-    <color-picker-stencil>
-      <input type="number" max="360">
-    </color-picker-stencil>
+    <hue-slider-stencil></hue-slider-stencil>
+    <hue-slider-stencil hue="100"></hue-slider-stencil>
+    <hue-slider-stencil>
+      Lorem ipsum
+    </hue-slider-stencil>
 
     <script>
-      const hueSlider = document.querySelector('color-picker-stencil');
+      const hueSlider = document.querySelector('hue-slider-stencil');
       hueSlider.addEventListener('input', function(e) {
         console.log('from host input:', e.detail);
       });

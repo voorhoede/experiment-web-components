@@ -1,4 +1,4 @@
-# color-picker-stencil
+# hue-slider-stencil
 
 
 

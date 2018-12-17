@@ -12,10 +12,10 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface ColorPickerStencil {
+  interface HueSliderStencil {
     'hue': string;
   }
-  interface ColorPickerStencilAttributes extends StencilHTMLAttributes {
+  interface HueSliderStencilAttributes extends StencilHTMLAttributes {
     'hue'?: string;
     'onInput'?: (event: CustomEvent) => void;
   }
@@ -23,26 +23,26 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'ColorPickerStencil': Components.ColorPickerStencil;
+    'HueSliderStencil': Components.HueSliderStencil;
   }
 
   interface StencilIntrinsicElements {
-    'color-picker-stencil': Components.ColorPickerStencilAttributes;
+    'hue-slider-stencil': Components.HueSliderStencilAttributes;
   }
 
 
-  interface HTMLColorPickerStencilElement extends Components.ColorPickerStencil, HTMLStencilElement {}
-  var HTMLColorPickerStencilElement: {
-    prototype: HTMLColorPickerStencilElement;
-    new (): HTMLColorPickerStencilElement;
+  interface HTMLHueSliderStencilElement extends Components.HueSliderStencil, HTMLStencilElement {}
+  var HTMLHueSliderStencilElement: {
+    prototype: HTMLHueSliderStencilElement;
+    new (): HTMLHueSliderStencilElement;
   };
 
   interface HTMLElementTagNameMap {
-    'color-picker-stencil': HTMLColorPickerStencilElement
+    'hue-slider-stencil': HTMLHueSliderStencilElement
   }
 
   interface ElementTagNameMap {
-    'color-picker-stencil': HTMLColorPickerStencilElement;
+    'hue-slider-stencil': HTMLHueSliderStencilElement;
   }
 
 
