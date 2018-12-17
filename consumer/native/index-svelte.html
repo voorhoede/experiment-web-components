@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Web Components - Native</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../../build/svelte/color-picker-svelte.js"></script>
+    <script src="../../build/svelte/bundle.js"></script>
     <style>
       body {
         display: flex;
         flex-direction: column;
       }
 
-      color-picker-svelte {
+      hue-slider-svelte {
         margin-bottom: 1rem;
       }
     </style>
   </head>
   <body>
-    <color-picker-svelte></color-picker-svelte>
-    <color-picker-svelte hue="100"></color-picker-svelte>
-    <color-picker-svelte>
-      <input type="number" max="360">
-    </color-picker-svelte>
+    <hue-slider-svelte></hue-slider-svelte>
+    <hue-slider-svelte hue="100"></hue-slider-svelte>
+    <hue-slider-svelte>
+      Lorem ipsum
+    </hue-slider-svelte>
 
     <script>
-      const hueSlider = document.querySelector('color-picker-svelte');
+      const hueSlider = document.querySelector('hue-slider-svelte');
       hueSlider.addEventListener('input', function(e) {
         console.log('from host input:', e.target.value);
       });

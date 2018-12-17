@@ -1,30 +1,27 @@
 <div class="app">
-  <ColorPickerSvelte on:input="onInput(event)"/>
-
-  <ColorPickerSvelte {hue}/>
-
-  <ColorPickerSvelte>
-    <input type="number" />
-  </ColorPickerSvelte>
+  <HueSliderSvelte on:input="onInput(event)" on:change="onChange(event)" />
+  <HueSliderSvelte hue="{hue}" />
+  <HueSliderSvelte>Lorem ipsum</HueSliderSvelte>
 </div>
 
 <script>
-import ColorPickerSvelte from './components/color-picker-svelte.html'
+  import HueSliderSvelte from './components/hue-slider-svelte.html';
 
-export default {
-  tag: 'my-app',
-  data: () => ({
-    hue: 100
-  }),
-  components: {
-    ColorPickerSvelte
-  },
-  methods: {
-    onInput(event) {
-      console.log(event)
+  export default {
+    tag: 'my-app',
+    data: () => ({
+      hue: '100'
+    }),
+    components: { HueSliderSvelte },
+    methods: {
+      onInput(e) {
+        console.log('onInput', e)
+      },
+      onChange(e) {
+        console.log('onChange', e)
+      }
     }
   }
-}
 </script>
 
 <style>
@@ -34,7 +31,7 @@ export default {
     justify-content: flex-start;
   }
 
-	.app :global(.color-picker-svelte) {
+  .app :global(.hue-slider-svelte) {
     margin-bottom: 1rem;
   }
 </style>

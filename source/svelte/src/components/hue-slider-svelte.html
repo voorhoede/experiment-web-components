@@ -1,0 +1,65 @@
+<label class="hue-slider" on:input="onInput(event)" on:change="onChange(event)">
+  {#if hue}
+    <input type="range" min="0" max="360" value="{inputValue}">
+  {:else}
+    <input type="range" min="0" max="360">
+  {/if}
+  <output style="background-color: hsl({inputValue}, 100%, 50%)">
+    <slot></slot>
+  </output>
+</label>
+
+<script>
+  export default {
+    tag: 'hue-slider-svelte',
+    data() {
+      return {
+        hue: '0',
+        inputValue: '0',
+        value: '0'
+      }
+    },
+    onstate({ changed, current }) {
+      if (changed.inputValue === true) {
+        this.set({ value: current.inputValue })
+      }
+    },
+    onupdate({ changed, current }) {
+      if (changed.hue === true) {
+        this.set({ inputValue: current.hue })
+      }
+    },
+    oncreate() {
+      const data = this.options.data || {}
+      if (data.hasOwnProperty('hue')) {
+        this.set({ inputValue: data.hue })
+      } else {
+        this.set({ inputValue: '0' })
+      }
+    },
+    methods: {
+      onInput(e) {
+        const { value } = e.target
+        this.set({ inputValue: value })
+        this.fire('input', { value })
+      },
+      onChange(e) {
+        const { value } = e.target
+        this.fire('change', { value })
+      }
+    }
+  }
+</script>
+
+<style>
+  .hue-slider {
+    display: flex;
+  }
+
+  .hue-slider output {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+</style>
