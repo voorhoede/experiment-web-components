@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Web Components - Native</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../../build/native/color-picker-native.js"></script>
+    <script src="../../build/native/hue-slider-native.js"></script>
     <style>
       body {
         display: flex;
         flex-direction: column;
       }
 
-      color-picker-native {
+      hue-slider-native {
         margin-bottom: 1rem;
       }
     </style>
   </head>
   <body>
-    <color-picker-native></color-picker-native>
-    <color-picker-native hue="100"></color-picker-native>
-    <color-picker-native>
-      <input type="number" max="360">
-    </color-picker-native>
+    <hue-slider-native></hue-slider-native>
+    <hue-slider-native hue="100"></hue-slider-native>
+    <hue-slider-native>
+      Lorem ipsum
+    </hue-slider-native>
 
     <script>
-      const hueSlider = document.querySelector('color-picker-native');
+      const hueSlider = document.querySelector('hue-slider-native');
       hueSlider.addEventListener('input', function(e) {
         console.log('from host input:', e.target.value);
       });

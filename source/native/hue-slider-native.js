@@ -9,65 +9,70 @@
  * @param   {number}  l       The lightness
  * @return  {Array}           The RGB representation
  */
-function hslToRgb(h, s, l){
-  var r, g, b;
+function hslToRgb(h, s, l) {
+  var r, g, b
 
-  if(s == 0){
-      r = g = b = l; // achromatic
-  }else{
-      var hue2rgb = function hue2rgb(p, q, t){
-          if(t < 0) t += 1;
-          if(t > 1) t -= 1;
-          if(t < 1/6) return p + (q - p) * 6 * t;
-          if(t < 1/2) return q;
-          if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-          return p;
-      }
+  if (s == 0) {
+    r = g = b = l // achromatic
+  } else {
+    function hue2rgb(p, q, t) {
+      if (t < 0) t += 1
+      if (t > 1) t -= 1
+      if (t < 1 / 6) return p + (q - p) * 6 * t
+      if (t < 1 / 2) return q
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
+      return p
+    }
 
-      var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-      var p = 2 * l - q;
-      r = hue2rgb(p, q, h + 1/3);
-      g = hue2rgb(p, q, h);
-      b = hue2rgb(p, q, h - 1/3);
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s
+    var p = 2 * l - q
+
+    r = hue2rgb(p, q, h + 1 / 3)
+    g = hue2rgb(p, q, h)
+    b = hue2rgb(p, q, h - 1 / 3)
   }
 
-  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)]
 }
 
 function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
+  var hex = c.toString(16)
+  return hex.length == 1 ? '0' + hex : hex
 }
 
-class ColorPickerNative extends HTMLElement {
+class HueSlider extends HTMLElement {
   constructor() {
     super()
-    const shadowRoot = this.attachShadow({mode: 'open'})
+    const shadowRoot = this.attachShadow({ mode: 'open' })
     shadowRoot.innerHTML = `
-    <slot data-hue-input><input type="range" min="0" max="360"></slot>
-    <span class="color-picker-native__output" data-hue-output>0</span>
-    <style>
-      :host {
-        display: inline-flex;
-      }
-      .color-picker-native__output {
-        --hue-value: 0;
-        display: block;
-        width: 2em;
-        height: 2em;
-        background-color: hsl(var(--hue-value), 100%, 50%);
-        color: transparent;
-        margin-left: 0.5em;
-      }
-    </style>
-  `;
+      <style>
+        .hue-slider {
+          display: flex;
+        }
+
+        .hue-slider output {
+          --hue-value: 0;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          margin-left: 10px;
+          background-color: hsl(var(--hue-value), 100%, 50%);
+        }
+      </style>
+      <label class="hue-slider">
+        <input type="range" min="0" max="360" data-hue-input>
+        <output data-hue-output>
+          <slot></slot>
+        </output>
+      </label>
+    `
 
     this.setValue = this.setValue.bind(this)
     this.handleInput = this.handleInput.bind(this)
   }
 
   static get observedAttributes() {
-    return ['hue'];
+    return ['hue']
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -101,18 +106,18 @@ class ColorPickerNative extends HTMLElement {
     }
   }
 
-  handleInput(event) {
-    event.stopPropagation()
+  handleInput(e) {
+    e.stopPropagation()
     this.hue =this.inputElement.value
-    this.dispatchEvent(new CustomEvent(event.type))
+    this.dispatchEvent(new CustomEvent(e.type))
   }
 
   connectedCallback() {
     const slot = this.shadowRoot.querySelector('slot')
     this.outputElement = this.shadowRoot.querySelector('[data-hue-output]')
-    this.inputElement = this.shadowRoot.querySelector('[data-hue-input] input')
+    this.inputElement = this.shadowRoot.querySelector('[data-hue-input]')
 
-    slot.addEventListener('slotchange', event => {
+    slot.addEventListener('slotchange', e => {
       const input = slot.assignedNodes().find(item => item.nodeName === 'INPUT')
       if (input) {
         const oldValue = this.inputElement.value
@@ -139,4 +144,4 @@ class ColorPickerNative extends HTMLElement {
   }
 }
 
-window.customElements.define('color-picker-native', ColorPickerNative)
+window.customElements.define('hue-slider-native', HueSlider)
