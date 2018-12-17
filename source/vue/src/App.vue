@@ -1,29 +1,18 @@
 <template>
   <div class="app">
-    <color-picker-vue />
-    <color-picker-vue :hue="100"/>
-    <color-picker-vue>
-      <input type="number" max="360">
-    </color-picker-vue>
+    <HueSlider></HueSlider>
+    <HueSlider :hue="100"></HueSlider>
+    <HueSlider>
+      Lorem ipsum
+    </HueSlider>
   </div>
 </template>
 
 <script>
-import ColorPickerVue from "./components/ColorPickerVue";
-export default {
-  components: {
-    ColorPickerVue
+  import HueSlider from './components/HueSlider';
+
+  export default {
+    name: 'App',
+    components: { HueSlider }
   }
-}
 </script>
-
-<style>
-.app {
-  display: flex;
-  flex-direction: column;
-}
-
-.app > * {
-  margin-bottom: 1rem
-}
-</style>

@@ -5,26 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Web Components - Native</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-
-      color-picker-react {
-        margin-bottom: 1rem
-      }
-    </style>
   </head>
   <body>
-    <color-picker-react></color-picker-react>
+    <div id="root"></div>
+    <hue-slider-react></hue-slider-react>
 
-    <script>
-      const colorPicker = document.querySelector('color-picker-react')
-      colorPicker.addEventListener('input', function(event) {console.log('from host input:', event)}, false)
-      colorPicker.addEventListener('change', function(event) {console.log('from host change:', event)}, false)
-    </script>
-    <script src="../../build/react/color-picker-react.js"></script>
+    <script src="../../build/react/hue-slider-react.js"></script>
   </body>
 </html>

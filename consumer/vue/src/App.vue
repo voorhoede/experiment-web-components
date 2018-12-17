@@ -5,57 +5,56 @@
     <div class="app__web-components">
 
       <p>native:</p>
-      <color-picker-native :hue="inputValue" />
-      <color-picker-native>
+      <hue-slider-native :hue="inputValue" />
+      <hue-slider-native>
         <input type="number" />
-      </color-picker-native>
+      </hue-slider-native>
 
       <p>skate:</p>
-      <color-picker-skate :hue="inputValue" />
+      <hue-slider-skate :hue="inputValue" />
 
       <p>stencil:</p>
-      <color-picker-stencil :hue="inputValue" />
-      <color-picker-stencil>
+      <hue-slider-stencil :hue="inputValue" />
+      <hue-slider-stencil>
         <input type="number" />
-      </color-picker-stencil>
+      </hue-slider-stencil>
 
       <p>svelte:</p>
-      <color-picker-svelte :hue="inputValue" />
-      <color-picker-svelte>
+      <hue-slider-svelte :hue="inputValue" />
+      <hue-slider-svelte>
         <input type="number" />
-      </color-picker-svelte>
+      </hue-slider-svelte>
     </div>
   </div>
 </template>
 
 <script>
-import '../../../build/native/color-picker-native'
-import '../../../build/skate/color-picker-skate'
-import '../../../build/svelte/color-picker-svelte'
+  import '../../../build/native/hue-slider-native'
+  import '../../../build/skate/hue-slider-skate'
+  import '../../../build/svelte/hue-slider-svelte'
 
-export default {
-  name: 'app',
-  data() {
-    return {
-      inputValue: 0
-    }
-  },
-
-}
+  export default {
+    name: 'app',
+    data() {
+      return {
+        inputValue: 0
+      }
+    },
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 
-.app__web-components {
-  display: flex;
-  flex-direction: column;
-}
+  .app__web-components {
+    display: flex;
+    flex-direction: column;
+  }
 </style>

@@ -2,7 +2,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: '../../../build/skate/color-picker-skate.js',
+    filename: '../../../build/skate/hue-slider-skate.js',
   },
   module: {
     rules: [

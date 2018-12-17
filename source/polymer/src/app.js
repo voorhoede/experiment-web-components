@@ -1,16 +1,14 @@
-import { LitElement, html } from '@polymer/lit-element';
-import './components/color-picker-polymer.js';
+import { LitElement, html } from '@polymer/lit-element'
+import './components/hue-slider-polymer.js'
 
 class App extends LitElement {
   render() {
     return html`
-      <color-picker-polymer></color-picker-polymer>
-      <color-picker-polymer hue="300"></color-picker-polymer>
-      <color-picker-polymer hue="300">
-        <input slot="input" type="number" min="1" max="360" @change=${(e) => console.log('changed!')}>
-      </color-picker-polymer>
-    `;
+      <hue-slider-polymer></hue-slider-polymer>
+      <hue-slider-polymer hue="300"></hue-slider-polymer>
+      <hue-slider-polymer>Lorem ipsum</hue-slider-polymer>
+    `
   }
 }
 
-window.customElements.define('polymer-app', App);
+window.customElements.define('polymer-app', App)

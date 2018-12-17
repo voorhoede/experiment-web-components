@@ -1,6 +1,6 @@
 # React
 
-React.js version of the color-picker component.
+React.js version of the hue slider component.
 
 ## Development
 
@@ -18,42 +18,38 @@ $ npm run start
 Without any props or children:
 
 ```
-<ColorPicker />
+<HueSlider />
 ```
 
 Add `hue` prop to set a custom initial value:
 
 ```
-<ColorPicker hue={180} />
+<HueSlider hue="180" />
 ```
 
 Use a different input element:
 
 ```
-<ColorPicker>
-  <input type="number" min="0" max="360" step="1" />
-</ColorPicker>
+<HueSlider>Lorem ipsum</HueSlider>
 ```
 
 ## Web Component features
 Without any props or children:
 
 ```
-<color-picker></color-picker>
+<hue-slider-react></hue-slider-react>
 ```
 
 Add `hue` prop to set a custom initial value:
 
 ```
-<color-picker hue="180"></color-picker>
+<hue-slider-react hue="180"></hue-slider-react>
 ```
 
 Use a different input element:
 
 ```
-<color-picker>
-  <input type="number" min="0" max="360" step="1" />
-</color-picker>
+<hue-slider-react>Lorem ipsum</hue-slider-react>
 ```
 
 # To-do's
