@@ -1,22 +1,21 @@
-import React from 'react';
-import ReactWebComponent from 'react-web-component';
-import PropTypes from 'prop-types';
+import React from 'react'
+import ReactWebComponent from 'react-web-component'
+import PropTypes from 'prop-types'
 
-import './hue-slider.css';
+import './hue-slider.css'
 
 export default class HueSlider extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       hue: props.hue || '0',
-    };
+    }
   }
 
   handleChange = (e) => {
-    const { value } = e.target;
-
-    this.setState({ hue: value });
+    const { value } = e.target
+    this.setState({ hue: value })
   }
 
   /**
@@ -25,12 +24,12 @@ export default class HueSlider extends React.Component {
     * state and use state instead.
     */
   webComponentConstructed() {
-    this.setState(this.props);
+    this.setState(this.props)
   }
 
   render() {
-    const { hue } = this.state;
-    const { children } = this.props;
+    const { hue } = this.state
+    const { children } = this.props
 
     return (
       <label className="hue-slider">
@@ -39,13 +38,13 @@ export default class HueSlider extends React.Component {
           { children }
         </output>
       </label>
-    );
+    )
   }
 }
 
 HueSlider.propTypes = {
   hue: PropTypes.string,
   children: PropTypes.node,
-};
+}
 
-ReactWebComponent.create(<HueSlider />, 'hue-slider-react');
+ReactWebComponent.create(<HueSlider />, 'hue-slider-react')

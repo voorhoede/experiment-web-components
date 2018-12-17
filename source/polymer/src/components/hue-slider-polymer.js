@@ -1,4 +1,4 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { LitElement, html } from '@polymer/lit-element'
 
 class HueSlider extends LitElement {
   static get properties() {
@@ -8,16 +8,14 @@ class HueSlider extends LitElement {
   }
 
   constructor() {
-    super();
-
-    this.hue = '0';
-
-    this.handleChange = this.handleChange.bind(this);
+    super()
+    this.hue = '0'
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(e) {
-    const { value } = e.target;
-    this.hue = value;
+    const { value } = e.target
+    this.hue = value
   }
 
   render() {
@@ -40,8 +38,8 @@ class HueSlider extends LitElement {
           <slot />
         </output>
       </label>
-    `;
+    `
   }
 }
 
-customElements.define('hue-slider-polymer', HueSlider);
+customElements.define('hue-slider-polymer', HueSlider)

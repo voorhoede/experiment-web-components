@@ -1,4 +1,4 @@
-import { Component, Prop, State, Event, EventEmitter, Watch } from '@stencil/core';
+import { Component, Prop, State, Event, EventEmitter, Watch } from '@stencil/core'
 
 @Component({
   tag: 'hue-slider-stencil',
@@ -7,12 +7,12 @@ import { Component, Prop, State, Event, EventEmitter, Watch } from '@stencil/cor
 })
 
 export class HueSlider {
-  @Prop({reflectToAttr: true, mutable: true}) hue: string = '100';
+  @Prop({reflectToAttr: true, mutable: true}) hue: string = '100'
 
-  @State() inputValue: string;
-  @State() value: string;
+  @State() inputValue: string
+  @State() value: string
 
-  @Event({eventName: 'input'}) inputEvent: EventEmitter;
+  @Event({eventName: 'input'}) inputEvent: EventEmitter
 
   handleInput(e) {
     e.stopPropagation()
@@ -39,6 +39,6 @@ export class HueSlider {
           <slot></slot>
         </output>
       </label>
-    );
+    )
   }
 }

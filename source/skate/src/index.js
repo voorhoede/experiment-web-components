@@ -1,8 +1,8 @@
 // @jsx h
 
-import { props, withComponent } from 'skatejs';
-import withPreact from '@skatejs/renderer-preact';
-import { h } from 'preact';
+import { props, withComponent } from 'skatejs'
+import withPreact from '@skatejs/renderer-preact'
+import { h } from 'preact'
 
 class HueSlider extends withComponent(withPreact()) {
   static get props() {
@@ -13,13 +13,13 @@ class HueSlider extends withComponent(withPreact()) {
 
   connectedCallback() {
     if (this.hue === '') {
-      this.hue = '0';
+      this.hue = '0'
     }
   }
 
   handleChange = (e) => {
-    const { value } = e.target;
-    this.hue = value;
+    const { value } = e.target
+    this.hue = value
   }
 
   render({ hue, handleChange }) {
@@ -30,8 +30,8 @@ class HueSlider extends withComponent(withPreact()) {
           <slot></slot>
         </output>
       </label>
-    );
+    )
   }
 }
 
-customElements.define('hue-slider-skate', HueSlider);
+customElements.define('hue-slider-skate', HueSlider)

@@ -13,7 +13,7 @@
     props: ['hue'],
     data: () => ({
       inputValue: null,
-      value: 0
+      value: '0'
     }),
     methods: {
       setValue(val) {
