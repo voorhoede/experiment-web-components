@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
-import './web-components/color-picker-native';
-// import './web-components/color-picker-vue';
-import './web-components/color-picker-svelte';
+import './web-components/hue-slider-native';
+// import './web-components/hue-slider-vue';
+import './web-components/hue-slider-svelte';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <p>native:</p>
-        <color-picker-native></color-picker-native>
-        <color-picker-native hue="300"></color-picker-native>
-        <color-picker-native>
-          <input type="number" min="0" max="360" step="1" />
-        </color-picker-native>
+        <p>Native:</p>
+        <hue-slider-native></hue-slider-native>
+        <hue-slider-native hue="100"></hue-slider-native>
+        <hue-slider-native>
+          Lorem ipsum
+        </hue-slider-native>
 
-        <p>vue:</p>
-        {/* <color-picker-vue></color-picker-vue> */}
-        {/* <color-picker-vue hue="300"></color-picker-vue> */}
-        {/* <color-picker-vue>
-          <input type="number" min="0" max="360" step="1" />
-        </color-picker-vue> */}
+        <p>Vue:</p>
+        {/* <hue-slider-vue></hue-slider-vue> */}
+        {/* <hue-slider-vue hue="100"></hue-slider-vue> */}
+        {/* <hue-slider-vue>
+          Lorem ipsum
+        </hue-slider-vue> */}
 
-        <p>svelte:</p>
-        <color-picker-svelte></color-picker-svelte>
-        <color-picker-svelte hue="300"></color-picker-svelte>
-        <color-picker-svelte>
-          <input type="number" min="0" max="360" step="1" />
-        </color-picker-svelte>
+        <p>Svelte:</p>
+        <hue-slider-svelte></hue-slider-svelte>
+        <hue-slider-svelte hue="100"></hue-slider-svelte>
+        <hue-slider-svelte>
+          Lorem ipsum
+        </hue-slider-svelte>
       </div>
     );
   }
