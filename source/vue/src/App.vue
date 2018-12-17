@@ -2,7 +2,9 @@
   <div class="app">
     <HueSlider></HueSlider>
     <HueSlider :hue="100"></HueSlider>
-    <HueSlider>Lorem ipsum</HueSlider>
+    <HueSlider>
+      Lorem ipsum
+    </HueSlider>
   </div>
 </template>
 

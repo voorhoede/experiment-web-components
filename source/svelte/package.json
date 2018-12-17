@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "postbuild": "svelte compile src/components/hue-slider-svelte.html > ../../build/svelte/hue-slider-svelte.js --customElement",
+    "postbuild": "svelte compile src/components/hue-slider.html > ../../build/svelte/hue-slider-svelte.js --customElement",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",

@@ -1,18 +1,18 @@
 <div class="app">
-  <HueSliderSvelte on:input="onInput(event)" on:change="onChange(event)" />
-  <HueSliderSvelte hue="{hue}" />
-  <HueSliderSvelte>Lorem ipsum</HueSliderSvelte>
+  <HueSlider on:input="onInput(event)" on:change="onChange(event)" />
+  <HueSlider hue="{hue}" />
+  <HueSlider>Lorem ipsum</HueSlider>
 </div>
 
 <script>
-  import HueSliderSvelte from './components/hue-slider-svelte.html';
+  import HueSlider from './components/hue-slider.html';
 
   export default {
     tag: 'my-app',
     data: () => ({
       hue: '100'
     }),
-    components: { HueSliderSvelte },
+    components: { HueSlider },
     methods: {
       onInput(e) {
         console.log('onInput', e)
